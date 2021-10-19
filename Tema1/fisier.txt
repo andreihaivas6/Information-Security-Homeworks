@@ -1,0 +1,4 @@
+Aici vom avea ceva text.
+A il cripteaza si il trimite lui B.
+La final, B il decripteaza si il afiseaza.
+Totu' bun.
