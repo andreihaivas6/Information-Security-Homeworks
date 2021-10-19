@@ -19,11 +19,13 @@ class AESImplementation:
         self._iv = iv
     
     def encrypt(self, message_to_crypt: str) -> bytes:
+        print('Encrypting message...')
         return self._encrypt_ecb(message_to_crypt) \
             if self._mode == AESMode.ECB \
             else self._encrypt_ofb(message_to_crypt)
 
     def decrypt(self, message_to_decrypt: bytes) -> str:
+        print('Decrypting message...')
         return self._decrypt_ecb(message_to_decrypt) \
             if self._mode == AESMode.ECB \
             else self._decrypt_ofb(message_to_decrypt)
@@ -48,7 +50,7 @@ class AESImplementation:
             MyCrypto.encrypt(plaintext, self._key)
             for plaintext in plaintext_list
         ]
-        print(len(ciphertext_list[0]))
+
         return b''.join(ciphertext_list)
 
     def _decrypt_ecb(self, message_to_decrypt: bytes) -> str:
